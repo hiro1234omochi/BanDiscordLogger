@@ -1,0 +1,4 @@
+name: BanDiscordLogger
+version: '${project.version}'
+main: dev.omochi.bandiscordlogger.BanDiscordLogger
+api-version: 1.18
