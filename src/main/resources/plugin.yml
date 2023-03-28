@@ -1,4 +1,16 @@
 name: BanDiscordLogger
-version: '${project.version}'
+version: '1.1-SNAPSHOT'
 main: dev.omochi.bandiscordlogger.BanDiscordLogger
 api-version: 1.18
+commands:
+  autoban:
+    aliases: [ aban ]
+    description: ipban及びbanを自動的に実行し、discordにログを残します
+    permission: bandiscordlogger.commands.autoban
+    usage: /aban [player名] [reason（理由）]
+permissions:
+  bandiscordlogger.*:
+    children:
+      bandiscordlogger.commands: true
+    description: bandiscordloggerを全部使える。
+    default: op

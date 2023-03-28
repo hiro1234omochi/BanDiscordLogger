@@ -9,8 +9,5 @@
         <module name="BanDiscordLogger" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BanDiscordLogger" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
