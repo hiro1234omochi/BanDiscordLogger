@@ -25,7 +25,9 @@ public class CommandCatch implements CommandExecutor {
 
             String playername = args[0]; //1個目のサブコマンド
             String reason = args[1]; //2個目のサブコマンド
-            if(!Bukkit.getOfflinePlayer(playername).hasPlayedBefore() && !Bukkit.getOfflinePlayer(playername).isOnline()){
+
+            OfflinePlayer PlayerNameOfflineplayer=Bukkit.getOfflinePlayer(playername);
+            if(!PlayerNameOfflineplayer.hasPlayedBefore() && !PlayerNameOfflineplayer.isOnline()){
                 sender.sendMessage(ChatColor.RED+"対象はこのサーバーに入ったことがないため実行できませんでした");
                 return true;
             }
@@ -35,7 +37,7 @@ public class CommandCatch implements CommandExecutor {
             }
 
 
-            final String uuid = Bukkit.getOfflinePlayer(playername).getUniqueId().toString();
+            final String uuid = PlayerNameOfflineplayer.getUniqueId().toString();
 
 
             List<String> playerBanIpList=EventCatch.UuidToIps(uuid);
