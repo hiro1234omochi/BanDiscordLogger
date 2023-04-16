@@ -41,6 +41,10 @@ public class CommandCatch implements CommandExecutor {
 
 
             List<String> playerBanIpList=EventCatch.UuidToIps(uuid);
+
+            playerBanIpList.removeAll(BanDiscordLogger.IgnoreIp);
+            //Ignoreは削除
+
             List<String> playerBanPlayerList=EventCatch.IpsToUuids(playerBanIpList);
 
 
@@ -76,11 +80,14 @@ public class CommandCatch implements CommandExecutor {
                 BanDiscordLogger.database.set(parent+".ban.uuid",BanUuid);
 
 
+                String ReasonEach;
                 if(tempDB.getNumber()==ReasonNumber){
-                    tempDB.setBanreason(reason);
+                    ReasonEach=reason;
                 }else{
-                    tempDB.setBanreason("No"+ReasonNumber+"と同じ");
+                    ReasonEach="No"+ReasonNumber+"と同じ";
                 }
+                tempDB.setBanreason(ReasonEach);
+                BanDiscordLogger.database.set(parent+".ban.reason",ReasonEach);
 
                 List<String> BanUuidIpList=EventCatch.UuidToIps(BanUuid);
 

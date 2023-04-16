@@ -26,7 +26,10 @@ public class EventCatch implements Listener {
         boolean isMatch=false;
         boolean isMatch2=false;
 
-
+        //ignoreなら追加しない
+        if(BanDiscordLogger.IgnoreIp.contains(ip)){
+            return;
+        }
         List<String> keep_l = null;
         for(List<String> l: BanDiscordLogger.UuidAndIp){
             if(l.get(0).equals(uuid)){

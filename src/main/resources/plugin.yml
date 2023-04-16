@@ -1,5 +1,5 @@
 name: BanDiscordLogger
-version: '1.3-SNAPSHOT'
+version: '${project.version}'
 main: dev.omochi.bandiscordlogger.BanDiscordLogger
 api-version: 1.18
 depend: ["floodgate", "Geyser-Spigot"]

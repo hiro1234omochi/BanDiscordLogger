@@ -1,3 +1,5 @@
 token: "token"
 ChannelId: 100000000000000O0000
 ProcessNumber: 0
+IgnoreIp:
+  - 127.0.0.1

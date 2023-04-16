@@ -31,6 +31,7 @@ public final class BanDiscordLogger extends JavaPlugin {
     public static List<DatabaseContain> BanContain;
     public static FloodgateApi floodgateApi;
     public static List<List<String>> UuidAndIp;
+    public static List<String> IgnoreIp;
     @Override
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new EventCatch(), this);
@@ -46,6 +47,8 @@ public final class BanDiscordLogger extends JavaPlugin {
         this.getConfig().options().copyDefaults(true);
         saveConfig();
 
+
+        IgnoreIp=config.getStringList("IgnoreIp");
         BotToken=config.getString("token");
         try{
             jda = JDABuilder.createDefault(BotToken).build();
